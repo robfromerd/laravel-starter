@@ -19,14 +19,14 @@
           <div class="p-6">
     
             <h2 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $sample->title }}</h2>
-            <p class="leading-relaxed mb-3">{{ $sample->body }}.</p>
+            <p class="leading-relaxed mb-3">{{ $sample->body }}</p>
 @if (auth()->user() && auth()->user()->role === 'admin')
            <p> <a class="text-xs py-2 px-4 shadow-md no-underline rounded-full bg-indigo-700 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-light focus:outline-none active:shadow-none" href="{{ route('samples.edit', $sample) }}">Edit this sample</a></p>
 
             <form action="{{ route('samples.destroy', $sample) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button class="text-xs mt-2 py-2 px-4 shadow-md no-underline rounded-full bg-red-400 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-light focus:outline-none active:shadow-none" type="submit">Delete this sample</button>
+                <button class="text-xs mt-2 py-2 px-4 shadow-md no-underline rounded-full bg-red-600 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-light focus:outline-none active:shadow-none" type="submit">Delete this sample</button>
             </form>
 
         @endif 
